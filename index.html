@@ -91,7 +91,7 @@ p { margin: 0; }
 .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 3rem; align-items: center; padding-block: 4.2rem 4.4rem; }
 @media (max-width: 920px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 2.2rem; padding-block: 2.6rem 3rem; } }
 .hero-copy { display: flex; flex-direction: column; gap: 1.35rem; min-width: 0; }
-.pill { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.86rem; font-weight: 800; color: var(--cyan); background: var(--cyan-soft); border: 1px solid rgba(111, 163, 210, 0.35); border-radius: 999px; padding: 0.35rem 0.9rem; }
+.pill { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.86rem; font-weight: 800; color: var(--cyan); background: linear-gradient(var(--cyan-soft), var(--cyan-soft)), var(--bg); border: 1px solid rgba(111, 163, 210, 0.35); border-radius: 999px; padding: 0.35rem 0.9rem; }
 .pill i { width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 4px rgba(111, 163, 210, 0.18); }
 .hero h1 { font-size: clamp(2.15rem, 4.7vw, 3.55rem); line-height: 1.22; }
 .hero h1 em { font-style: normal; color: var(--cyan); }
@@ -117,7 +117,13 @@ p { margin: 0; }
 .art-note .k1 { background: #2E3340; border: 1.5px solid #4A5468; }
 .art-note .k2 { background: #172C45; border: 1.5px solid var(--cyan); }
 .art-note small { font-size: 0.74rem; color: var(--muted); }
-@media (max-width: 920px) { .art { order: -1; width: min(84%, 21rem); } }
+@media (max-width: 920px) {
+  /* 한 줄 배치에서는 필터 그림을 제목 뒤 배경으로 */
+  .art { position: absolute; z-index: 0; top: 0.6rem; right: -16vw; width: min(82vw, 25rem); margin: 0; opacity: 0.55; pointer-events: none; -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 88%); mask-image: linear-gradient(180deg, #000 50%, transparent 88%); }
+  .art-note { display: none; }
+  .hero-copy { position: relative; z-index: 1; }
+  .hero h1, .lede { text-shadow: 0 2px 16px rgba(15, 23, 41, 0.9), 0 0 2px rgba(15, 23, 41, 0.9); }
+}
 @media (max-width: 560px) { .hero .row { display: grid; grid-template-columns: minmax(0, 1fr); } }
 
 /* 증상 */
