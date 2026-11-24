@@ -1,6 +1,3 @@
-# K-Dissolve 페이지 시안
+# K-Dissolve (옮김)
 
-대지남사서비스(현대 블루핸즈 남사점) K-Dissolve DPF 세척 안내 페이지 시안입니다.
-
-- 보기: https://janghyukjin.github.io/k-dissolve/
-- 시안 단계라 검색 노출을 막아 두었습니다(`noindex`).
+이 페이지는 https://daejinamsa.com/k-dissolve/ 로 옮겼습니다. 원본은 janghyukjin/daejinamsa 저장소의 `k-dissolve/`에 있습니다.
